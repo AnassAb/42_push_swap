@@ -6,7 +6,7 @@
 /*   By: anass <anass@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 08:57:50 by aabidar           #+#    #+#             */
-/*   Updated: 2024/02/28 10:55:11 by anass            ###   ########.fr       */
+/*   Updated: 2024/02/28 12:57:22 by anass            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,31 @@ void	ft_error(t_stack **a)
 	exit(1);
 }
 
-int	num_is_valid(char *s)
+int	check_string(char *s)
+{
+	int	i;
+	int	d;
+
+	i = 0;
+	d = 0;
+	while (s[i])
+	{
+		if (!(ft_isdigit(s[i]) || s[i] == 32 || s[i] == '-' || s[i] == '+'))
+			return (0);
+		if (ft_isdigit(s[i]))
+			d = 1;
+		i++;
+	}
+	return (d);
+}
+
+int	nums_are_valid(char *s)
 {
 	int	i;
 
 	i = 0;
+	if (check_string(s) == 0)
+		return (0);
 	while (s[i] && ft_isspace(s[i]))
 		i++;
 	if ((s[i] == '-' || s[i] == '+') && ft_isdigit(s[i + 1]))
@@ -35,6 +55,10 @@ int	num_is_valid(char *s)
 		i++;
 	if (s[i] == '\0')
 		return (1);
+	if (ft_isdigit(s[i]))
+		return (2);
+	if ((s[i] == '-' || s[i] == '+') && ft_isdigit(s[i + 1]))
+		return (2);
 	return (0);
 }
 
@@ -61,20 +85,17 @@ void	check_dup(t_stack **a)
 void	get_numbers(int ac, char **av, t_stack **a)
 {
 	int	i;
+	int	nums_v;
 
-	i = 0;
-	if (ac == 2)
-	{
-		*a = ft_split(av[1]);
-		if (*a == NULL)
-			ft_error(a);
-	}
-	else if (ac > 2)
+	if (ac >= 2)
 	{
 		i = 1;
 		while (i < ac)
 		{
-			if (num_is_valid(av[i]))
+			nums_v = nums_are_valid(av[i]);
+			if (nums_v == 2)
+				ft_split(av[i], a);
+			else if (nums_v == 1)
 				add_at_end(a, new_node(ft_atoi(av[i], a)));
 			else
 				ft_error(a);

@@ -6,7 +6,7 @@
 /*   By: anass <anass@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 10:42:35 by anass             #+#    #+#             */
-/*   Updated: 2024/02/28 10:39:19 by anass            ###   ########.fr       */
+/*   Updated: 2024/02/28 12:17:13 by anass            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	get_numbers(ac, av, &a);
+	if (ft_stack_size(a) == 0)
+		exit(0);
 	instruction = get_next_line(0);
 	while (instruction)
 	{

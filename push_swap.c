@@ -6,7 +6,7 @@
 /*   By: anass <anass@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 09:05:50 by aabidar           #+#    #+#             */
-/*   Updated: 2024/02/23 15:11:19 by anass            ###   ########.fr       */
+/*   Updated: 2024/02/28 12:26:02 by anass            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	get_numbers(ac, av, &a);
-	if (stack_is_sorted(a))
+	if (ft_stack_size(a) == 0 || stack_is_sorted(a))
 	{
 		ft_clear_lst(&a);
 		exit(0);

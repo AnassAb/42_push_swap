@@ -6,7 +6,7 @@
 /*   By: anass <anass@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 08:58:24 by aabidar           #+#    #+#             */
-/*   Updated: 2024/02/23 15:11:26 by anass            ###   ########.fr       */
+/*   Updated: 2024/02/28 12:08:30 by anass            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct number_stack
 int						ft_atoi(char *s, t_stack **a);
 int						ft_isdigit(char c);
 int						ft_isspace(char c);
-t_stack					*ft_split(char *s);
+void					ft_split(char *s, t_stack **a);
 void					get_numbers(int ac, char **av, t_stack **a);
 
 // STACK UTILS
