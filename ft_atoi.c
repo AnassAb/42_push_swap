@@ -6,7 +6,7 @@
 /*   By: anass <anass@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 08:59:34 by aabidar           #+#    #+#             */
-/*   Updated: 2024/02/28 11:19:15 by anass            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:34:55 by anass            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	ft_atoi(char *s, t_stack **a)
 	len = 0;
 	atoi_sign_check(s, &i, &sg, &len);
 	res = 0;
+	while (s[i] && s[i] == '0')
+		i++;
 	while (s[i] && ft_isdigit(s[i]))
 	{
 		res = res * 10 + (s[i] - '0');

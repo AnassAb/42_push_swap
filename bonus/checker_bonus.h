@@ -6,14 +6,13 @@
 /*   By: anass <anass@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 10:42:58 by anass             #+#    #+#             */
-/*   Updated: 2024/02/23 11:56:07 by anass            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:34:35 by anass            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 

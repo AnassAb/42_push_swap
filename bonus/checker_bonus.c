@@ -6,22 +6,11 @@
 /*   By: anass <anass@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 10:42:35 by anass             #+#    #+#             */
-/*   Updated: 2024/02/28 12:17:13 by anass            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:34:29 by anass            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-
-void	print_stack(t_stack *a, char *name)
-{
-	printf("%s: ", name);
-	while (a)
-	{
-		printf("%d\t", a->num);
-		a = a->next;
-	}
-	printf("\n");
-}
 
 int	main(int ac, char **av)
 {
