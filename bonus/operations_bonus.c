@@ -6,7 +6,7 @@
 /*   By: anass <anass@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 11:06:47 by anass             #+#    #+#             */
-/*   Updated: 2024/02/28 10:38:10 by anass            ###   ########.fr       */
+/*   Updated: 2024/02/29 16:04:12 by anass            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	push(t_stack **a, t_stack **b, int mode)
 		tmp->next = NULL;
 		add_at_front(a, tmp);
 	}
-	else
+	else if (mode == 2)
 	{
 		if (*a != NULL)
 		{
